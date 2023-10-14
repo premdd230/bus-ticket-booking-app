@@ -1,0 +1,121 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register page</title>
+    <link rel="stylesheet" href="style2.css">
+
+    <script src="script2.js"></script>
+
+</head>
+<body>
+    <body>
+        <div class="main">
+            
+            <div class="register">
+                <div class="reg-content">
+                    <h1>You have an account?</h1>
+                    <button><a href="login.html">LOGIN</a></button>
+                </div>
+            
+            <div class="login">
+                <h1>REGISTER</h1>
+                <form action="">
+                    <input id="email" type="email" placeholder="email" value="">
+                    <input id="name" type="text" placeholder="name">
+                    <div class="flex_input"><label for="" id="">Age</label><input type="number" name="" id="age"><label for="">Gender</label><input type="text" name="" id="gender"></div>
+                    <input id="password" type="password" placeholder="password">
+                    <input id="c-pass" type="password" placeholder="conform password">
+                    <input id="phone" type="number" placeholder="phone number">
+                    <button class="ok" onclick="register()">REGISTER</button>
+    
+                </form>
+            </div>
+    
+            </div>
+
+            <style>
+                .flex_input>input,label{
+                    display: inline-block;
+                    width: 80px;
+                    margin-top: 0px;margin-bottom: 0px;
+                    margin-left: 30px;
+                }
+            </style>
+
+            <script>
+                
+                function register()
+                    {
+                            var x = document.getElementById("email").value
+                            var y = document.getElementById("password").value
+                            var c = document.getElementById("c-pass").value
+                            var n = document.getElementById("name").value
+                            var p = document.getElementById("phone").value
+                            var a = document.getElementById("age").value
+                            var g = document.getElementById("gender").value
+                            
+
+
+                        if ((x=="") || (y=="") || (n=="") || (p=="")) {
+                            alert("please enter the your details");
+                            
+                        }
+                        // else if((c==y))
+                        // {
+                        //     alert("your password and conform password is mismatching so please enter the correct password")
+                        // }
+                         else {
+
+                            // localStorage.setItem("email" , x);
+                            // localStorage.setItem("password", y);
+                            // localStorage.setItem("name" , n);
+                            // localStorage.setItem("age" , a);
+                            // localStorage.setItem("gender" , g);
+                            // localStorage.setItem("phone",p);
+
+
+
+                            //new push data
+
+                            //var data =[];
+                            var data = JSON.parse(localStorage.getItem("reg_details"))??[];
+
+                            data.push({"email":x ,"name":n,"pass":y,"c_pass":c,"Age":a,"phone":p, "gender":g});
+       
+                            localStorage.setItem("reg_details",JSON.stringify(data));
+
+
+                            
+
+
+
+
+
+
+
+
+                            event.preventDefault();
+                            alert("successfully register your details in local storage")
+                            window.open("./login.html");
+                            
+                        }
+                        
+
+                    }
+            </script>
+    
+</body>
+</html>

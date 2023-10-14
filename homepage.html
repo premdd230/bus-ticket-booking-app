@@ -1,0 +1,158 @@
+<!-- <!DOCTYPE html> -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homeopage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/regular.min.css">
+
+</head>
+
+
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand fs-2 fw-bolder">Yes Bus</a>
+          <h1 class="d-flex">
+            <button class="btn btn-outline-success m-3" onclick="location.href='mybooking.html','_self';">My Booking</button>
+            <button  onclick="location.href='login.html','_self';" class="btn btn-outline-success m-3">Login</button>
+            <button class="btn btn-outline-success m-3">Offers</button>
+          </h1>
+        </div>
+    </nav>
+      <section id="bg-img">
+        <h1 class="text-center m-5 p-5">Book Your Bus Ticket</h1>
+        <div class="text-center">
+            <select id="Depature"  class="m-3 p-3 rounded-pill" style="background-color: rgba(255, 255, 255, 0.4); -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px);">
+              <option>-Depature city-</option>
+              <option>Chennai</option>
+              <option>Madurai</option>
+              <option>Nagapattinam</option>
+              <option>Trichy</option>
+              <option>Thiruvarur</option>
+              <option>Eroad</option>
+              <option>Kovai</option>
+              <option>Velore</option>
+              <option>Velankanni</option>
+            </select>
+            <button class="swap1"  onclick="swap()" style="border-radius: 40px; height: 70; width: 80; background-color: rgba(255, 255, 255, 0.4); -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px);">
+              <img width="60" height="40" src="../IMAGE/—Pngtree—arrow icon_4634559.png" alt="animal" >
+            </button>            
+            <select id="Arrival" class="m-3 p-3 rounded-pill"  style="background-color: rgba(255, 255, 255, 0.4); -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px);">
+              <option>-Arrival city-</option>
+              <option>Chennai</option>
+              <option>Madurai</option>
+              <option>Nagapattinam</option>
+              <option>Trichy</option>
+              <option>Thiruvarur</option>
+              <option>Eroad</option>
+              <option>Kovai</option>
+              <option>Velore</option>
+              <option>Velankanni</option>
+            </select>
+            <input id="date" type="date" class="m-3 p-3 rounded-pill" name="" id=""  style="background-color: rgba(255, 255, 255, 0.4); -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px);">
+            <input type="button" onclick="search()" class="align-middle m-3 p-3 rounded-pill btn btn-outline-primary" value="  Search   "  style="background-color: rgba(255, 255, 255, 0.4); -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px);">
+            <br><span style="display: none;" class="m-5 p-5" id="demo">sdfg</span><br>   
+            <span style="display: none;" class="m-5 p-5">dfg</span>
+        </div>
+            <span class="m-5 p-5"></span>
+            
+      </section>
+      <footer class="border-top m-5 border-primary p-5">
+        <h1 class="fs-1 text-center  fw-bold m-5">Offers</h1>
+
+        <div class="p-5 d-flex justify-content-around" id="offers">
+            <p class="fs-3 p-3 fw-bolder border border-primary rounded" style="height: auto; width: 280;">Get Rs.250 on your first bus ticket booking</p>
+        
+            <p class="fs-3 p-3 fw-bolder border border-primary rounded" style="height: auto; width: 280;">Get 5% discount on every ticket booking</p>
+
+            <p class="fs-3 p-3 fw-bolder border border-primary rounded" style="height: auto; width: 280;">win the cash backs and gift cards</p>
+
+            <p class="fs-3 p-3 fw-bolder border border-primary rounded" style="height: auto; width: 280;">and more...</p>
+        </div>
+
+        <style>
+            #offers>p
+            {
+                background-image: linear-gradient(45deg,rgb(138, 138, 243),white);
+                word-wrap: normal;
+            }
+            #bg-img
+            {
+              background-image:url("../IMAGE/240_F_409657181_sRsNzbmI5xdHyVMWvx1zFis0Z9ECXpYG.jpg");
+              background-repeat: no-repeat;
+              background-size: 100% 100%;
+              object-fit: fill;
+            }
+            .swap1:hover
+            {
+              background-color: blue;
+
+            }
+
+        </style>
+
+
+        <script>
+          // var date=document.getElementById("date").value;
+          event.preventDefault();
+          //localStorage.setItem("lastname", "Smith");
+          // alert(date)
+
+          function swap()
+          {
+            // console.log(dep,arr);
+            var dep = document.getElementById("Depature").value;
+            var arr = document.getElementById("Arrival").value;
+
+            var a=arr;
+            var d=dep;
+
+            document.getElementById("Depature").value = a;
+            document.getElementById("Arrival").value = d;
+            // $('Depature').html(arr);
+            // $('Arrival').html(dep);
+          }
+
+          function search() 
+          {
+            var date=document.getElementById("date").value
+            if ((document.getElementById("Depature").value=="-Depature city-") || (document.getElementById("Arrival").value=="-Arrival city-")) 
+            {
+              alert("please select depature city and Arrival")
+            } 
+            else if(date=="")
+            {
+              alert("please select the date");
+            }
+            else {
+              sessionStorage.setItem("date",date);
+              sessionStorage.setItem("start",document.getElementById("Depature").value);
+              sessionStorage.setItem("end",document.getElementById("Arrival").value);
+
+              // alert(a);
+              //console.log("prem");
+              window.open("./seatbook.html","_self");
+              // localStorage.setItem("Depature",dep);
+              // localStorage.setItem("Arrival",arr);
+              
+            };
+            
+          }
+
+          
+          
+
+
+        </script>
+
+
+      </footer>
+
+      
+    
+</body>
+</html>

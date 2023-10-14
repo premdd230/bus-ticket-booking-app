@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my booking</title>
+</head>
+<body>
+    <!-- <table>
+        <tbody id="tbl"></tbody>
+      </table> -->
+      <div style="width: 100%; background-color: antiquewhite;"><h1 id="head">Hai</h1></div>
+      <div id="body" style="height: 100%; width: 100%;"></div>
+      <div class="end" style="display:grid; grid-template-columns: auto auto; justify-content: space-around; margin-top: 10%;">
+        <input type="button" onclick="print_btn()" value="Print" id="print"><input onclick="location.href='./homepage.html','_self';" type="button" value="CLOSE">
+      </div>
+
+
+    
+</body>
+
+<style>
+            
+    
+</style>
+
+<script>
+
+
+      document.getElementById("head").innerHTML=sessionStorage.getItem("name"),"Booking details";
+      let get_session = sessionStorage.getItem("user")
+      //console.log(get_session);
+      let myarray = JSON.parse(localStorage.getItem(get_session));      //get_session is used for get the login email name
+      console.log(myarray);
+      for (let i = 0; i < myarray.length;i++) 
+      {
+        let name =myarray[i].name;
+        let age =myarray[i].Age;
+        let gender =myarray[i].gender;
+        let start = myarray[i].depature;
+        let end = myarray[i].arrival;
+        let number =myarray[i].phone;
+        let seat =myarray[i].seat;
+        let price =myarray[i].price;
+        let id_proof=myarray[i].id_proof;
+        let jouney_date=myarray[i].jouney_date;
+
+        let table = `<table> <tbody>
+          <th>name</th> <th>age </th> <th>gender</th> <th>journey date</th>  <th>start</th> <th>end</th> <th>phone number</th> <th>seat number</th> <th>price</th> <th>id proof</th> 
+        <tr><td>${name}</td> <td>${age}</td> <td>${gender}</td> <td>${jouney_date}</td>  <td>${start}</td> <td>${end}</td> <td>${number}</td> <td>${seat}</td> <td>${price}</td> <td>${id_proof}</td> </tr> 
+        </tbody>
+        </table>`
+        //document.getElementById("body").innerHTML=table;  //it is print the single table not all the data
+        document.writeln(table)
+      }
+
+      sessionStorage.getItem("email")
+
+
+      function print_btn() {
+        window.print();
+        
+      }
+
+</script>
+
+<style>
+  table,tr,td,th{
+    border: 1px solid black;font-size: 20px;
+  }
+
+table{margin: 20px;align-items: center;justify-content: center;}
+  th{color: blue;background-color: beige;text-align: center;padding: 10px;font-size: 25px;}
+  td{color: black;background-color: beige;text-align: center;padding: 10px;}
+
+</style>
+
+</html>

@@ -1,0 +1,99 @@
+*
+{
+    box-sizing: 0px;
+    margin: 0px;
+    padding: 0px;
+
+}
+
+.register
+{
+    z-index: 1;
+    position: relative;
+    margin: 5% auto;
+    background-color: red;
+    height: 70%;
+    width: 80%;
+    border: 2px solid ;
+    border-radius: 5px;
+    /* place-items: center; */
+
+}
+.reg-content
+{
+    border: 1px solid;
+    height: 35%;
+    width: 25%;
+    padding: 20px;
+    position: absolute;
+    right: 0%;
+    top: 32%;
+    color: azure;
+    
+
+}
+.reg-content>button
+{
+    border-radius: 5px;
+    padding: 10px;
+}
+.login
+{
+    z-index: 3;
+    position: absolute;
+    left: 10%;
+    top: -10%;
+    height: 120%;
+    width: 40%;
+    border: 1px solid;
+    border-radius: 3px;
+    background-color: aliceblue;
+    
+    padding: 5%;
+    box-shadow: 10px 10px 10px rgb(108, 105, 105);
+    
+
+}
+
+.login>h1
+{
+    text-align: center;
+    margin-top: 10%;
+    margin-bottom: 8%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
+
+}
+
+input
+{
+    /* display: flex;
+    margin: 5%;
+    height: 8%;
+    width: 90%;
+    margin-top: 10%;
+    margin-bottom: 10%; */
+    /* padding-bottom: 10%; */
+    height: 8%;
+    width: 90%;
+    /* margin: 30%; */
+
+
+}
+
+.ok
+{
+    position: absolute;
+    left: 40%;
+    height: 35px;
+    width: 20%;
+
+}
+.align
+{
+    margin-bottom: 10%;
+}
+
+
+
+
